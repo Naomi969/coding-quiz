@@ -5,60 +5,62 @@ var timeLeft = 70;
 var timer;
 //global
 var currentQuestionIndex = 0;
+var spashEl = document.getElementById('splashScreen');
+var questionsEl = document.getElementById('questions');
 
 
 
 // this holds all the questions
 var questions = [
     {
-        'question1':"At the beginning of the series, how many children do Ned and Catelyn Stark have?",
-        'options1':[
+        question:"At the beginning of the series, how many children do Ned and Catelyn Stark have?",
+        options:[
             '4',
             '5',
             '6',
             '3',
         ],
-        'answer1': 'btn1'
+        answer: 'btn1'
     },
     {
-        'question2':"Who is the first character in the series to be called king of the north?",
-        'options2':[
+        question:"Who is the first character in the series to be called king of the north?",
+        options:[
             'Robb Stark',
             'Ned Stark',
             'Edmure Tully',
             'Jon Snow',
         ],
-        'answer2': 'btn0'
+        answer: 'btn0'
     },
     {
-        'question3':"How does Daenerys hatch her dragon eggs?",
-        'options3':[
+        question:"How does Daenerys hatch her dragon eggs?",
+        options:[
             'With the help of a witch',
             'Using wild fire',
             'In a funeral pyre',
             'With a lighting strike',
         ],
-        'answer3': 'btn2'
+        answer: 'btn2'
     },
     {
-        'question4':"How does Daenerys hatch her dragon eggs?",
-        'options4':[
+        question:"How does Daenerys hatch her dragon eggs?",
+        options:[
             'Lady',
             'Ghost',
             'Grey wind',
             'Nymeria',
         ],
-        'answer4': 'btn3'
+        answer: 'btn3'
     },
     {
-        'question5':"What is Olenna Tyrell's nickname?",
-        'options5':[
+        question:"What is Olenna Tyrell's nickname?",
+        options:[
             'Queen of Hearts',
             'Queen of Thorns',
             'Lady of Roses',
             'Queen of High Garden',
         ],
-        'answer5': 'btn1'
+        answer: 'btn1'
     }
 ]
 
@@ -70,11 +72,10 @@ function showQuestion () {
         displayQuizResults();
     }
 
-    if(quiz[currentQuestionIndex] !== undefined) {
-        startScreen.hidden = true;
+    if(questions[currentQuestionIndex] !== undefined) {
+        splashEl.hidden = true;
         questionEl.hidden = false;
-        answerChoiceContainer.hidden = false;
-        questionEl.textContent=quiz[currentQuestionIndex].question;
+        questionEl.textContent=questions[currentQuestionIndex].question;
         AC0El.textContent=quiz[currentQuestionIndex].AC0;
         AC1El.textContent=quiz[currentQuestionIndex].AC1;
         AC2El.textContent=quiz[currentQuestionIndex].AC2;
@@ -83,11 +84,10 @@ function showQuestion () {
 }
 
 
-//timer func- missing something
+//timer
 function startTimer () {
     timer = setInterval(function (){
         timeLeft--;
-        // console.log(timeRemaining + 'that we see')
         time.textContent = timeLeft + ' seconds';
     if (timeLeft === 0) {
         clearInterval (timer);
