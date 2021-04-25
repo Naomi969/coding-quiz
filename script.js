@@ -1,15 +1,12 @@
-// function enterQuiz() {
-//     console.log("hide")
-//     const x = document.getElementById("splashScreen")
-//     if (x.style == "block") {
-//         console.log("hide")
-//         x.style.display = "none"
-//     }
-// }
+//timer
+var startBtn = document.getElementById('startButton');
+var time = document.getElementById('timer')
+var timeLeft = 70;
 
-// const splash = document.getElementById("startButton");
-// splash.addEventListener("click", enterQuiz());
 
+
+
+// this holds all the questions
 var questions [
     {
         question1="At the beginning of the series, how many children do Ned and Catelyn Stark have?",
@@ -62,3 +59,14 @@ var questions [
         answer5= 'button1'
     }
 ]
+
+
+//timer func
+var seconds = document.getElementById("timer").textContent;
+var countdown = setInterval(function() {
+    seconds--;
+    document.getElementById("timer").textContent = seconds;
+    if (seconds <= 0) clearInterval(countdown);
+}, 1000);
+
+startBtn.addEventListener('click', countdown);
