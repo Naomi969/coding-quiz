@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Quiz</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./Assets/style.css">
 </head>
 
-<header> 
+<header>
     <div>
         <div class="container">
             <nav class="row">
@@ -18,29 +18,33 @@
                 <p class="col-md-6 text-right">Time:<span id='timer'>70</span>
             </nav>
         </div>
-        <div class="text-center splash" id ="splashScreen">
-            <h3 id="quizIntro">Let's see what you know about Game of Thrones with this quiz. Click the button bellow to start your quiz</h3>
+
+        <div class="text-center splash" id="splashScreen">
+            <h3 id="quizIntro">Let's see what you know about Game of Thrones with this quiz. Click the button bellow to
+                start your quiz</h3>
             <button id="startButton">Start</button>
         </div>
     </div>
 </header>
 
-<!-- <body>
-    <div id= "questions" style="display:none">
+<body>
+    <div id="questions">
         <div id="question"></div>
-    <button class= "options" id= "option1" onclick="checkAnswer('question1','option1')"></button>
-    <button class= "options" id= "option2" onclick="checkAnswer('option2')"></button>
-    <button class= "options" id= "option3" onclick="checkAnswer('option3')"></button>
-    <button class= "options" id= "option4" onclick="checkAnswer('option4')"></button>
+        <button class="options" id="btn0" ></button>
+        <button class="options" id="btn1" ></button>
+        <button class="options" id="btn2" ></button>
+        <button class="options" id="btn3" ></button>
     </div>
 
-    <p id="finalScore" style= "display: none;">Your final score is: <span id="score"></span></p>
-        <form id="submit-form" method="POST" action="/assets/score.html" >
-            <div class="input-initials">
-              <label for="initials">Enter initials: </label>
-              <input type="text" name="initials" id="initials"/>
-            </div>
-            <button id="submit">Submit</button>
-        </form>
+    <!-- <p id="finalScore" style="display: none;">Your final score is: <span id="score"></span></p>
+    <form id="submit-form" method="POST" action="/assets/score.html">
+        <div class="input-initials">
+            <label for="initials">Enter initials: </label>
+            <input type="text" name="initials" id="initials" />
+        </div>
+        <button id="submit">Submit</button>
+    </form> -->
+<script src="Assets/script.js"></script>
+</body>
 
-</body> -->
+</html>
