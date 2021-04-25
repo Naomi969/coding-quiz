@@ -12,6 +12,11 @@ var btn0 = document.getElementById('btn0');
 var btn1 = document.getElementById('btn1');
 var btn2 = document.getElementById('btn2');
 var btn3 = document.getElementById('btn3');
+var correctEl = document.getElementById('Correct')
+var incorrentEl = document.getElementById('Incorrect')
+var scoreEl = document.getElementById('scorePage')
+var scoreNum = document.getElementById('score')
+var initialEl = document.getElementById('initial-form')
 
 
 
@@ -71,12 +76,11 @@ var questions = [
     }
 ]
 
-//function to populate-- it does not run through it. 
+//function to populate 
 function showQuestion () {
     if (cqIndex > questions.length - 1) {
         clearInterval(timer);
-        // console.log(currentQuestionIndex)
-        // displayQuizResults();
+        resultsPage();
     }
     if(questions[cqIndex] !== undefined) {
         splashEl.hidden = true;
@@ -89,12 +93,14 @@ function showQuestion () {
         btn3.textContent=questions[cqIndex].btnc3;
     }
 }
-// function to chech the user choice
+// function to chech the user choice-- correct/ incorrect are supposed to dissappear when the whole thing starts again.
 function checkSelected(event){
     if(event.target.textContent === questions[cqIndex].answer){
         console.log('correct!!!')
+        correctEl.hidden = false
     }else{
         console.log('incorrect!!!')
+        incorrentEl.hidden = false
         timeLeft = timeLeft - 10
     }
     cqIndex++
@@ -117,3 +123,22 @@ startBtn.addEventListener("click", function() {
     startTimer();
     showQuestion();
 })
+
+//when the quiz is done function
+
+function resultsPage(){
+    console.log('donzo')
+    questionsEl.hidden = true
+    buttonsEl.hidden = true 
+    correctEl.hidden = true
+    incorrentEl.hidden = true 
+    scoreEl.hidden = false
+    initialEl.hidden = false 
+
+    if (timeLeft < 0){
+        timeLeft = 0
+    } 
+
+    time.textContent = timeLeft + ' seconds';
+    scoreNum.textContent = timeLeft;
+}

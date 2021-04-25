@@ -1,0 +1,17 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.btn {
+    background-color: rgba(177, 109, 240, 0.822);
+}
+
+header{
+}
+
+.splash{
+
+    font-size: 35px;
+    padding: 20px 30px 30px 30px;
+}
+
