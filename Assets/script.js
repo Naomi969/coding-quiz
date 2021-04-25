@@ -4,7 +4,7 @@ var time = document.getElementById('timer')
 var timeLeft = 70;
 var timer;
 //global
-var currentQuestionIndex = 0;
+var cqIndex = 0;
 var splashEl = document.getElementById('splashScreen');
 var questionsEl = document.getElementById('questions');
 var buttonsEl = document.getElementById('btns');
@@ -27,7 +27,7 @@ var questions = [
         btnc2:'6',
         btnc3:'3',
       
-        answer: 'btn1'
+        answer: '5'
     },
     {
         question:"Who is the first character in the series to be called king of the north?",
@@ -37,7 +37,7 @@ var questions = [
         btnc2:'Edmure Tully',
         btnc3:'Jon Snow',
       
-        answer: 'btn0'
+        answer: 'Robb Stark'
     },
     {
         question:"How does Daenerys hatch her dragon eggs?",
@@ -47,17 +47,17 @@ var questions = [
         btnc2:'In a funeral pyre',
         btnc3:'With a lighting strike',
        
-        answer: 'btn2'
+        answer: 'In a funeral pyre'
     },
     {
-        question:"How does Daenerys hatch her dragon eggs?",
+        question:"What is the name of Arya Stark's wolf?",
 
         btnc0:'Lady',
         btnc1:'Ghost',
         btnc2:'Grey wind',
         btnc3:'Nymeria',
         
-        answer: 'btn3'
+        answer: 'Nymeria'
     },
     {
         question:"What is Olenna Tyrell's nickname?",
@@ -67,27 +67,38 @@ var questions = [
         btnc2:'Lady of Roses',
         btnc3:'Queen of High Garden',
         
-        answer: 'btn1'
+        answer: 'Queen of Thorns'
     }
 ]
 
-//function to populate
+//function to populate-- it does not run through it. 
 function showQuestion () {
-    if (currentQuestionIndex > questions.length - 1) {
+    if (cqIndex > questions.length - 1) {
         clearInterval(timer);
         // console.log(currentQuestionIndex)
         // displayQuizResults();
     }
-    if(questions[currentQuestionIndex] !== undefined) {
+    if(questions[cqIndex] !== undefined) {
         splashEl.hidden = true;
         questionsEl.hidden = false;
         buttonsEl.hidden = false;
-        questionsEl.textContent=questions[currentQuestionIndex].question;
-        btn0.textContent=questions[currentQuestionIndex].btnc0;
-        btn1.textContent=questions[currentQuestionIndex].btnc1;
-        btn2.textContent=questions[currentQuestionIndex].btnc2;
-        btn3.textContent=questions[currentQuestionIndex].btnc3;
+        questionsEl.textContent=questions[cqIndex].question;
+        btn0.textContent=questions[cqIndex].btnc0;
+        btn1.textContent=questions[cqIndex].btnc1;
+        btn2.textContent=questions[cqIndex].btnc2;
+        btn3.textContent=questions[cqIndex].btnc3;
     }
+}
+// function to chech the user choice
+function checkSelected(event){
+    if(event.target.textContent === questions[cqIndex].answer){
+        console.log('correct!!!')
+    }else{
+        console.log('incorrect!!!')
+        timeLeft = timeLeft - 10
+    }
+    cqIndex++
+    showQuestion()
 }
 
 
