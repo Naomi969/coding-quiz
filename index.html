@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Quiz</title>
+</head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<header> 
+    <div class="splash" id ="splashScreen">
+        <div class="container">
+            <nav class="row">
+                <a class="col-md-6" href="./assets/hs.html">High Score</a>
+                <p class="col-md-6 text-right">Time:<span id='timer'>0</span>
+            </nav>
+        </div>
+        <div class="text-center">
+            <h3 id="quiz" data-state="visible">This is your coding quiz. Click start when you're ready! Good luck!</h3>
+            <button id="startButton">Start</button>
+        </div>
+    </div>
+</header>
+<!-- <body>
+    <div id= "questions" style="display:none">
+        <div id="question"></div>
+    <button class= "options" id= "option1" onclick="checkAnswer('question1','option1')"></button>
+    <button class= "options" id= "option2" onclick="checkAnswer('option2')"></button>
+    <button class= "options" id= "option3" onclick="checkAnswer('option3')"></button>
+    <button class= "options" id= "option4" onclick="checkAnswer('option4')"></button>
+    </div>
+
+    <p id="finalScore" style= "display: none;">Your final score is: <span id="score"></span></p>
+        <form id="submit-form" method="POST" action="/assets/score.html" >
+            <div class="input-initials">
+              <label for="initials">Enter initials: </label>
+              <input type="text" name="initials" id="initials"/>
+            </div>
+            <button id="submit">Submit</button>
+        </form>
+
+</body> -->
+<script type="text/javascript", src="questions.json"></script>
+<script src="script.js"></script>
+<body >
+    <form>
+        <div>
+        <input type="radio" id="option1 "name= "option1" value="option1">
+        <label for="option1">Option1</label>
+        <input type="radio" id="option2" name= "option2" value="option2">
+        <label for="option2">Option2</label>
+        <input type="radio" id="option3" name= "option3" value="option3">
+        <label for="option3">Option3</label>
+        <input type="radio" id="option4"name= "option4" value="option4">
+        <label for="option4">Option4</label>
+        </div>
+    </form>
+</body>
+</html>
