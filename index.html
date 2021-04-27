@@ -11,6 +11,11 @@
 </head>
 
 <header>
+    <div class="results" id="resultsBox">
+        <input type="button" id="closeBoard" value="Close"></input>
+        <h2>Results</h2>
+        <hr>
+    </div>
     <div>
         <div class="container">
             <nav class="row">
@@ -22,39 +27,39 @@
         <div class="text-center splash" id="splashScreen">
             <p id="quizIntro">Let's see what you know about Game of Thrones with this quiz. Click the button bellow to
                 start your quiz</p>
-            <button class="btn btn-outline-dark"id="startButton">Start</button>
+            <button class="btn btn-outline-dark" id="startButton">Start</button>
         </div>
     </div>
 </header>
 
-<body>
-    <div class="q"id="questions" hidden>
-        <div id="question"></div>
-        <br>
-    </div>
-    <section id="btns" hidden>
-        <button class="btn btn-outline-dark" id="btn0" onclick="checkSelected(event)"></button>
-        <button class="btn btn-outline-dark" id="btn1" onclick="checkSelected(event)"></button>
-        <button class="btn btn-outline-dark" id="btn2" onclick="checkSelected(event)"></button>
-        <button class="btn btn-outline-dark" id="btn3" onclick="checkSelected(event)"></button>
-    </section>
-    <br>
-    <div class="iC">
-        <h5 id="Incorrect" hidden>Incorrect Answer! You have lost 10 seconds</h5>
-        <h5 id='Correct' hidden> Correct Answer! You got this!</h5>
-    </div>
-
-    <p id="scorePage" hidden>Your final score is: <span id="score"></span></p>
-
-    <form id="initial-form" hidden method="POST">
-        <div class="input-initials">
-            <label for="initials">Enter initials: </label>
-            <input type="text" name="initials" id="initials" placeholder="Your Initials"/>
+<body onload="start()">
+        <div class="q" id="questions" hidden>
+            <div id="question"></div>
+            <br>
         </div>
-        <button id="submit">Submit</button>
-    </form>
+        <section id="btns" hidden>
+            <button class="btn btn-outline-dark" id="btn0" onclick="checkSelected(event)"></button>
+            <button class="btn btn-outline-dark" id="btn1" onclick="checkSelected(event)"></button>
+            <button class="btn btn-outline-dark" id="btn2" onclick="checkSelected(event)"></button>
+            <button class="btn btn-outline-dark" id="btn3" onclick="checkSelected(event)"></button>
+        </section>
+        <br>
+        <div class="iC">
+            <h5 id="Incorrect" hidden>Incorrect Answer! You have lost 10 seconds</h5>
+            <h5 id='Correct' hidden> Correct Answer! You got this!</h5>
+        </div>
 
-<script src="Assets/script.js"></script>
+        <p id="scorePage" hidden>Your final score is: <span id="score"></span></p>
+
+        <form id="initial-form" hidden method="POST">
+            <div class="input-initials">
+                <label for="initials">Enter initials: </label>
+                <input type="text" name="txtinitials" id="txtinitials" placeholder="Your Initials" />
+            </div>
+            <input type="button" id="submit" value="Submit"></input>
+        </form> 
+       
+    <script src="Assets/script.js"></script>
 </body>
 
 </html>
